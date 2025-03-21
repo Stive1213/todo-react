@@ -36,7 +36,28 @@ addItem(){
 deleteItem(key) {
   const list = [...this.state.list];
   const updateList = list.filter((item) => item.id !== key)
-};
+
+  this.setState({
+    list: updateList,
+   });
+
+}
+
+  
+editItem = (index) => {
+  const todos = [...this.state.lest];
+  const editedTodo = prompt('edit the todo:');
+  if (editedTodo !== null && editedTodo.trim() !== '')
+  {
+    let updatedTodos = [...todos]
+    updatedTodos[index].value = editedTodo;
+    this.setState({
+      list: updatedTodos,
+    });
+  }
+}
+
+
 
 
 }
