@@ -9,7 +9,30 @@ constructor(props) {
   this.state = {
     userInput: "",
     list:[],
+  };
+}
+
+updateInput(value){
+  this.setState({
+    userInput: value,
+  });
+}
+addItem(){
+  if(this.state.userInput !== "") {
+    const userInput = {
+      id: math.random(),
+      value: this.state.userInput,
+    };
+    const list = [...this.state.list];
+    list.push(userInput);
+
+    this.setState({
+      list,
+      userInput:"",
+    });
   }
 }
+
+
 }
 export default App;
