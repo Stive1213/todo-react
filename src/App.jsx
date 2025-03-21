@@ -33,6 +33,11 @@ addItem(){
   }
 }
 
+deleteItem(key) {
+  const list = [...this.state.list];
+  const updateList = list.filter((item) => item.id !== key)
+};
+
 
 }
 export default App;
